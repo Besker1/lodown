@@ -1,6 +1,6 @@
 {
   "name": "lodown-besker1",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "my first npm library",
   "main": "index.js",
   "directories": {

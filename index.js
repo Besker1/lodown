@@ -39,11 +39,11 @@ return value;
 /**
  * typeof: Designed to take any value, return that value datatype in a string
  * @param {any value} value: The value to return datatypes.
- * @return {any datatypes} value: string datatypes 
+ * @return {string} value: string datatypes 
  */
 
 // make a function with the name typeof that takes value as its parameters
-     function typeOf (value){
+     function typeOf(value){
         // check if the value is equal to null anbd return null
    if (value === null){
        return "null";
@@ -54,11 +54,12 @@ return value;
    return typeof (value);
 }
 }
- module.exports.typeOf = typeOf();
+ module.exports.typeOf = typeOf;
 /**
- * first: is designed to to get the first number of elements
+ * first: is designed to get the first number of elements
  * from the array and return them in a new array.
- * @param {any array} array: if there is an array return an array literal
+ * if there is an array return an array literal
+ * @param {any array} array
  * @param {any number} number: the value return the first element in <array>
  *  the first <number> items of <array>
  * @return: a new array
@@ -78,10 +79,11 @@ return value;
     return array;
 }
 }
- module.exports.first = first();
+ module.exports.first = first;
 /**
  * last: Designed to get the last number of element
- * @param {any array} if array is not present: return an array literal
+ * if array is not present: return an array literal
+ * @param {any array} 
  * @param { a number} if number is not given: return the last element of the array.
  * @return {array} returns a new array of the number of elements
  * starting at the end of the array.
@@ -108,7 +110,7 @@ function last(array, number ){
    array.shift(array[i]);
    return array;
 }};
- module.exports.last = last();
+ module.exports.last = last;
 
 /**
  * indexOf: Designed to check the array for the value, if it’s found, 
@@ -116,7 +118,6 @@ function last(array, number ){
  * if it’s not found then it returns -1.
  * @param {any value} value: The value to return index.
  * @param {array} array: array to return -1
- * @return -1
  * @return index number
  */
 
@@ -141,7 +142,7 @@ function last(array, number ){
 
 }
 
- module.exports.indexOf = indexOf();
+ module.exports.indexOf = indexOf;
 
 /**
  * filter: Designed to return an array of elements 
@@ -170,11 +171,12 @@ function filter(array, func){
              console.log(newArr);
               return newArr  ; 
          }
-          module.exports.filter = filter();
+          module.exports.filter = filter;
          
          /**
- * reject: Designed to it returns an array of elements
- * that failed the test function.
+ * reject: Designed to return an array of elements 
+ * that return false when passed as an argument to the callback function filter takes.
+ * .
  * @param {Array} array: The array over which to iterate.
  * @param {Function} funcky: The Function to be applied to each value in the 
  * array and reject anything that is not true
@@ -191,9 +193,9 @@ function reject (arrya,funcky){
                  
     } );
     return arrays;
-};
+}
 
- module.exports.reject = reject();
+ module.exports.reject = reject;
 
 /**
  * partition: Designed to loop over an Array, and applies the 
@@ -203,6 +205,7 @@ function reject (arrya,funcky){
  * @param {Array} array: The array over which to iterate.
  * @param {Function} funck: The Function to be applied to each value in the 
  * array and check if anything that is true or not
+ * @return {array} an array of nested arrays containing both truthy and falsy
  */
 
 
@@ -223,7 +226,7 @@ collection.push(newArray);
 collection.push(otherArr);
      return collection;
 };
- module.exports.partition = partition();
+ module.exports.partition = partition;
 /**
  * map: Designed to loop over an Array, and applies the 
  * funck Function to each value in the array and
@@ -261,7 +264,7 @@ function map(array,callback) {
     // return newArr
      return newArr;
 };
- module.exports.map = map();
+ module.exports.map = map;
          
          /**
  * pluck: Designed to loop over an Array of objects and return the any array containing
@@ -277,10 +280,11 @@ function map(array,callback) {
         return object[key];
     });
 }
- module.exports.pluck = pluck();
+ module.exports.pluck = pluck;
 /**
  * every: Designed to  Call <function> for every element of <collection> 
- * with the paramaters and check if it's true or false
+ * with the paramaters. if any of the items pass the condition it return true
+ * and if not return false
  * @param {collection} collection: The array over which to iterate and compare from.
  * @param {action} function: the function which every element runs from to check 
  * if true or false.
@@ -313,11 +317,12 @@ function every(collection,action) {
        return true;
    }
 }
- module.exports.every = every();
+ module.exports.every = every;
 
 /**
  * some: Designed to  Call <function> for arrays or objects of <collection> 
- * with the paramaters and check if it's true or false
+ * with the paramaters and check if it's true or false, if any item pass the 
+ * condition.
  * @param {collection} collection: The array over which to iterate and compare from.
  * @param {action} function: the function which every element runs from to check 
  * if it's an array or an object and return true or false.
@@ -350,9 +355,9 @@ function every(collection,action) {
        return false;
    }
 }
-       module.exports.some = some();
+       module.exports.some = some;
       /**
- * reduce: Designed to 
+ * reduce: Designed to reduce an item to the smallest value
  * @param {array} array: The array over which to iterate.
  * @param {seed} index : the value that is been returned 
  * @param {action} function: the function which every element are run to check if seeds exist.
@@ -386,7 +391,7 @@ function every(collection,action) {
     }
     return seed;
 };
- module.exports.reduce = reduce();
+ module.exports.reduce = reduce;
 /**
  * extend: Designed to iterate and copy properties of objects and returned them 
  * to the updated original object (object1)
@@ -410,4 +415,4 @@ function extend(object1, ...restOfObjects){
     
  
 }
- module.exports.extend = extend();
+ module.exports.extend = extend;
