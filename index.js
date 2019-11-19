@@ -37,7 +37,7 @@ return value;
 
 
 /**
- * typeof: Designed to take any value, return that value datatype in a string
+ * typeOf: Designed to take any value, return that value datatype in a string
  * @param {any value} value: The value to return datatypes.
  * @return {string} value: string datatypes 
  */
@@ -117,8 +117,8 @@ function last(array, number ){
  * returns the index number of the first occurrence of the element,
  * if it’s not found then it returns -1.
  * @param {any value} value: The value to return index.
- * @param {array} array: array to return -1
- * @return index number
+ * @param {array} array: if values is not in array to return -1
+ * @return {index number}
  */
 
  function indexOf(array,value){
@@ -175,7 +175,7 @@ function filter(array, func){
          
          /**
  * reject: Designed to return an array of elements 
- * that return false when passed as an argument to the callback function filter takes.
+ * that return false when passed as an argument to the callback function.
  * .
  * @param {Array} array: The array over which to iterate.
  * @param {Function} funcky: The Function to be applied to each value in the 
@@ -205,7 +205,7 @@ function reject (arrya,funcky){
  * @param {Array} array: The array over which to iterate.
  * @param {Function} funck: The Function to be applied to each value in the 
  * array and check if anything that is true or not
- * @return {array} an array of nested arrays containing both truthy and falsy
+ * @return {array} an array of two nested arrays containing both truthy and falsy
  */
 
 
@@ -283,8 +283,8 @@ function map(array,callback) {
  module.exports.pluck = pluck;
 /**
  * every: Designed to  Call <function> for every element of <collection> 
- * with the paramaters. if any of the items pass the condition it return true
- * and if not return false
+ * with the paramaters.  if all of the items pass the condition, the function return true 
+ * and false otherwise
  * @param {collection} collection: The array over which to iterate and compare from.
  * @param {action} function: the function which every element runs from to check 
  * if true or false.
@@ -357,7 +357,11 @@ function every(collection,action) {
 }
        module.exports.some = some;
       /**
- * reduce: Designed to reduce an item to the smallest value
+ * reduce: Designed to Calls a function for every element passing the arguments: previousResults, element, index.
+ * And uses the return value of the function as the "previous result" for the next iteration and seed as the first "previous result". 
+ * If no seed is given, the
+ * first "previous value" will be the first index value of the array. After the last iteration,the return value of 
+ * the final function call will be returned.
  * @param {array} array: The array over which to iterate.
  * @param {seed} index : the value that is been returned 
  * @param {action} function: the function which every element are run to check if seeds exist.
