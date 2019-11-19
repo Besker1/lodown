@@ -201,7 +201,7 @@ function reject (arrya,funcky){
  * partition: Designed to loop over an Array, and applies the 
  * funck Function to each value in the array and push any element that is true
  * into a new array and any element that is not true to another array
- * 
+ * and return an array of two nested arrays containing truthy and falsy values
  * @param {Array} array: The array over which to iterate.
  * @param {Function} funck: The Function to be applied to each value in the 
  * array and check if anything that is true or not
